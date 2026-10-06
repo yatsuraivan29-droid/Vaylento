@@ -1089,14 +1089,19 @@ p {
   position: absolute;
   top: 16px;
   right: 16px;
+  display: grid;
+  place-items: center;
   width: 34px;
   height: 34px;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.5);
   color: var(--text);
   font-size: 1.5rem;
   line-height: 1;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .site-footer {
