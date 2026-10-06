@@ -34,17 +34,23 @@ if (menuToggle && nav) {
 const modal = document.getElementById('contact-modal');
 const modalCloseButtons = document.querySelectorAll('[data-close-modal]');
 const contactTriggers = document.querySelectorAll('a[href="#contact"], [data-open-contact]');
+let modalOpener = null;
 
 function openContactModal() {
+  modalOpener = document.activeElement;
   modal?.classList.add('is-open');
   modal?.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  modal?.querySelector('.modal-close')?.focus();
 }
 
 function closeContactModal() {
+  if (!modal?.classList.contains('is-open')) return;
+  modalOpener?.focus();
   modal?.classList.remove('is-open');
   modal?.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  modalOpener = null;
 }
 
 contactTriggers.forEach((trigger) => {

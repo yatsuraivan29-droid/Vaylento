@@ -1038,6 +1038,10 @@ p {
   position: relative;
   z-index: 1;
   width: min(1100px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   padding: 28px 30px 22px;
   background: rgba(247, 243, 238, 0.97);
   border: 1px solid var(--line);
@@ -1050,6 +1054,10 @@ p {
   grid-template-columns: 0.9fr 1.1fr;
   gap: 32px;
   align-items: center;
+  max-height: calc(100dvh - 82px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 12px;
 }
 
 .modal-copy {
@@ -1286,13 +1294,14 @@ p {
   .contact-modal-panel {
     width: min(100% - 16px, 560px);
     padding: 18px 14px 14px;
-    max-height: 92vh;
-    overflow-y: auto;
+    max-height: calc(100dvh - 16px);
   }
 
   .contact-modal-inner {
     grid-template-columns: 1fr;
     gap: 18px;
+    max-height: calc(100dvh - 48px);
+    padding-right: 8px;
   }
 
   .modal-copy h2 {
