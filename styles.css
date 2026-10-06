@@ -211,6 +211,7 @@ p {
 
 .menu-toggle {
   display: none;
+  flex-shrink: 0;
   flex-direction: column;
   gap: 5px;
   width: 42px;
